@@ -1,0 +1,12 @@
+{
+    "create" :{
+            "firstname" : "Ashish",
+            "lastname" : "Ghosh",
+            "email" : "Ashish.webdriverio@shop.com",
+            "password" : "password123"
+             },
+    "negativeLogin" :{
+            "username" : "Negative_Ashish@shop.com",
+            "password" : "passowrd123"
+    }       
+}

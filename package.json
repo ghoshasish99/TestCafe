@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx testcafe chrome:headless spec/test.js"
+    "test": "npx testcafe chrome:headless spec/test.account.js"
   },
   "repository": {
     "type": "git",

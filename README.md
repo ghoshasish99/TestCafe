@@ -1,5 +1,6 @@
 # TestCafe
 
+[![Build Status](https://dev.azure.com/AutomationsTools/Execution/_apis/build/status/TestCafe?branchName=master)](https://dev.azure.com/AutomationsTools/Execution/_build/latest?definitionId=5&branchName=master)
 
 #### Protractor is JavaScript based test automation framework. It uses WebDriverJS which is a nodejs binding implementation for Selenium 2.0/webdriver. Protractor uses Jasmine as the framework by default.
 

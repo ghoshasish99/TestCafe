@@ -1,5 +1,5 @@
 var Selector = require('testcafe').Selector;
-var Contacts = require('../pageobject/Contact');
+var Contacts = require('../pageobjects/Contact');
 var fs = require('fs');
 var jsonbody = fs.readFileSync('./testdata/contacts.json')
 var inputs = JSON.parse(jsonbody)
