@@ -15,10 +15,6 @@ steps:
   displayName: 'Install Node Dependencies'
 
 - script: |
-    npx webdriver-manager update
-  displayName: 'Update Webdrivers'
-
-- script: |
     npm test
   displayName: 'Run Testcafe Tests'
 
