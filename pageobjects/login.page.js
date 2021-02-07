@@ -1,4 +1,3 @@
-const Page = require('./page');
 var {Selector, t} = require('testcafe')
 
 class LoginPage extends Page {
@@ -14,7 +13,6 @@ class LoginPage extends Page {
     get confirmpassword () { return Selector('#confirmpassword') }
     get btncreateAccount2() { return Selector('form.register > .MuiButtonBase-root > .MuiButton-label')}
     get productSearch () { return Selector('input[aria-label="Product search"]')}
-
 
     async login (username, password) {
         await t
@@ -34,9 +32,6 @@ class LoginPage extends Page {
             .click(this.btncreateAccount2)
     }
 
-    open () {
-        return super.open('cts-shop/login');
-    }
 }
 
 module.exports = new LoginPage();

@@ -1,4 +1,3 @@
-const Page = require('./page');
 var {Selector,t} = require('testcafe')
 
 class SearchPage extends Page {
