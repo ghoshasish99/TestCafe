@@ -3,7 +3,7 @@ const SearchPage = require('../pageobjects/search.page');
 const accountData = require('../testdata/account.json');
 const productData = require('../testdata/product.json');
 
-fixture `Search and Add` .page `http://awswrkshpalb-1570520390.us-west-2.elb.amazonaws.com:3000/cts-shop/login`
+fixture `Search and Add` .page `${accountData.homeURL}`
 
     test('should be able to search and a product to basket', async t => {
         let random = Math.floor(Math.random()*90000) + 10000;

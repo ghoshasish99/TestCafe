@@ -6,7 +6,7 @@ const productData = require('../testdata/product.json')
 const addressData = require('../testdata/address.json') 
 const paymentData = require('../testdata/payment.json') 
 
-fixture `Buy Product` .page `http://awswrkshpalb-1570520390.us-west-2.elb.amazonaws.com:3000/cts-shop/login`
+fixture `Buy Product` .page `${accountData.homeURL}`
 
     test('should be able to buy a product', async t => {
         let random = Math.floor(Math.random()*90000) + 10000;

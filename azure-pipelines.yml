@@ -18,8 +18,8 @@ steps:
     npm test
   displayName: 'Run Testcafe Tests'
 
-#- task: PublishTestResults@2
-#  inputs:
-#    testResultsFormat: 'JUnit'
-#    testResultsFiles: 'allure-results/*.xml'
-#    testRunTitle: 'Protractor-Jasmine Execution Report'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/report.xml'
+    testRunTitle: 'Test Cafe Execution Report'

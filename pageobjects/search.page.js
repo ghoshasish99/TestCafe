@@ -5,7 +5,7 @@ class SearchPage {
     get searchfield () { return Selector('input[aria-label="Product search"]') }
     get btnSearch () { return Selector('button[aria-label="Search"]') }
     get searchedProduct () { return Selector('.MuiCardContent-root > :nth-child(1)') }
-    get btnAddToBasket () { return Selector('button span').withText('Add to your basket')}
+    get btnAddToBasket () { return Selector('span').withText('Add to your basket')}
     get iconBasket () { return Selector('#basket')}
     get proceedToCheckout () { return Selector('#proceedtocheckout')}
     
