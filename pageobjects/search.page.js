@@ -1,6 +1,6 @@
 var {Selector,t} = require('testcafe')
 
-class SearchPage extends Page {
+class SearchPage {
     
     get searchfield () { return Selector('input[aria-label="Product search"]') }
     get btnSearch () { return Selector('button[aria-label="Search"]') }

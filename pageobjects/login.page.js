@@ -1,6 +1,6 @@
 var {Selector, t} = require('testcafe')
 
-class LoginPage extends Page {
+class LoginPage {
     
     get email () { return Selector('#email') }
     get password () { return Selector('#password') }

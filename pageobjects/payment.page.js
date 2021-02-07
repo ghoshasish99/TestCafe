@@ -1,6 +1,6 @@
 var {Selector,t} = require('testcafe')
 
-class PaymentPage extends Page {
+class PaymentPage {
     
     get title () { return Selector('#datitle') }
     get firstname () { return Selector('#dafirstname') }

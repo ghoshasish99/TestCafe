@@ -4,49 +4,18 @@
 
 #### Protractor is JavaScript based test automation framework. It uses WebDriverJS which is a nodejs binding implementation for Selenium 2.0/webdriver. Protractor uses Jasmine as the framework by default.
 
-To install `testcafe` : 
-```powershell
-npm install testcafe --save-dev
-```
-To install `chai` assertion libraries : 
-```powershell
-npm install chai --save-dev
-```
-Run this command to download latest drivers :
-```powershell 
-npx webdriver-manager update
-```
+### Getting Started 
+To install testcafe, run this command : `npm install testcafe --save-dev`
+
 To install `allure report` :
 ```powershell 
 npm install jasmine-allure-reporter --save-dev
 ```
-To execute Protractor run the command below :
+To execute testcafe tests run the command below :
 ```powershell 
-npx protractor <location to the conf.js>
+npx testcafe chrome mytest.js
 ```
-Protractor execution is governed by its configuration file. A sample `conf.js` is shown below :
-```javascript
-exports.config = {
-    capabilities: {   
-      'browserName' : 'chrome'
-    },
-    framework: 'jasmine',
-    specs: ['specs/*.js'],
- }   
-```
-If you want to execute your protractor tests in a remote server or Selenium Grid, you need to modify your `conf.js` slightly :
-```javascript
-exports.config = {
-    seleniumAddress: 'http://xx.xx.xxx.xxx:4444/wd/hub',
-    multiCapabilities:
-   [ 
-    {
-    'browserName': 'chrome'
-    }
-  ],
-    framework: 'jasmine',
-    specs: ['specs/*.js'],
- }   
+
 ```
 To generate allure reports you can add the following block of code to the `conf.js` :
 ```javascript
