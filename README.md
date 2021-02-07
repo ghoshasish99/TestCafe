@@ -1,56 +1,42 @@
 # TestCafe
 
-[![Build Status](https://dev.azure.com/AutomationsTools/Execution/_apis/build/status/TestCafe?branchName=master)](https://dev.azure.com/AutomationsTools/Execution/_build/latest?definitionId=5&branchName=master)
+[![Build Status](https://dev.azure.com/AutomationsTools/Execution/_apis/build/status/TestCafe?branchName=master)](https://dev.azure.com/AutomationsTools/Execution/_build/latest?definitionId=6&branchName=master)
 
-#### Protractor is JavaScript based test automation framework. It uses WebDriverJS which is a nodejs binding implementation for Selenium 2.0/webdriver. Protractor uses Jasmine as the framework by default.
+#### Testcafe is JavaScript based test automation framework. It directly works with the installed browsers hence no drivers are required.
 
 ### Getting Started 
-To install testcafe, run this command : `npm install testcafe --save-dev`
+* To install testcafe, run this command : `npm install testcafe --save-dev`
+* To install `testcafe-reporter-xunit`, run this command : `npm install testcafe-reporter-xunit --save-dev`
 
-To install `allure report` :
+To execute testcafe tests run this command : `npx testcafe <browser_alias> <location_of_your_tests>`
+Some examples can be found below :
 ```powershell 
-npm install jasmine-allure-reporter --save-dev
-```
-To execute testcafe tests run the command below :
-```powershell 
-npx testcafe chrome mytest.js
+npx testcafe chrome mytest.js # For specifying a particular test
+npx testcafe chrome spec/*.js # For specifying a Glob Pattern
+npx testcafe chrome:headless spec/*.js # For running tests headless
+npx testcafe chrome:headless spec/*.js --reporter spec,xunit:report.xml # For specifying reporter type and report location 
 ```
 
-```
-To generate allure reports you can add the following block of code to the `conf.js` :
+Testcafe's SelectorFactory `Selector` and TestController `t` can be used to identify elements on a webpage and interact with them.
+Some examples to identify elements are shown below :
 ```javascript
-onPrepare: function() {
-    var AllureReporter = require('jasmine-allure-reporter');
-    jasmine.getEnv().addReporter(new AllureReporter({
-      resultsDir: 'allure-results'
-    })); 
-  }
+Selector('#email')
+Selector('#password')
+Selector('a').withText(item)
 ```
-#### Protractor stands out from a standard WebdriverJS implementation in terms of the support it provides for Angular/Angular JS Applications:
-Protractor exposes `browser` and `element` globally.
-Once can easily identify html objects using their Angular properties with Protractor, like so :
-```javascript
-element(by.model("first"))
-element(by.binding("bindingname"))
-```
-For non Angular identifiers, one can use :
-```javascript
-element(by.id("gobutton"))
-element(by.css("[value='ADDITION']"))
-```
-A standard test set up in Protractor - Jasmine will look like this :
-```javascript
-describe('Mathematical Operations',()=>{
 
-    it('Should Perform Addition',()=>{ 
-       browser.get('https://juliemr.github.io/protractor-demo/');
-       element(by.model("first")).sendKeys('10');
-       element(by.model("operator")).click();
-       element(by.css("[value='ADDITION']")).click();
-       element(by.model("second")).sendKeys('20');
-       element(by.id("gobutton")).click();
-       expect (element(by.cssContainingText('.ng-binding','30'))).to.exist;
-    })
- }   
+A standard test set up in Testcafe will look like this :
+```javascript
+fixture `Login and Registration` .page `http://awswrkshpalb-1570520390.us-west-2.elb.amazonaws.com:3000/cts-shop/login`
+
+    it('login should fail with invalid credentials', async t =>{ 
+       await t
+         .typeText(Selector('#email'),'username')
+         .typeText(Selector('#password'),'password')
+         .click(Selector('form.login > .MuiButtonBase-root > .MuiButton-label'))
+         .expect(Selector('#loginerror').visible).ok()
+    })   
 ```
-For more on Protractor follow [this link](https://github.com/angular/protractor)
+The `fixture` and `test` functions are exposed globally.
+
+For more on Testcafe follow [this link](https://devexpress.github.io/testcafe/)
