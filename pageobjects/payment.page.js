@@ -16,7 +16,7 @@ class PaymentPage {
     get expirymonth () { return Selector('#expirymonth') }
     get expiryyear () { return Selector('#expiryyear')}
     get securitycode () { return Selector('#securitycode')}
-    get btnConfirm () { return Selector().withText('Confirm')}
+    get btnConfirm () { return Selector('#buttonconfirm > span.MuiButton-label')}
 
     async enterAddressDetails(title,fname,lname,addr1,addr2,city,state,zip){
         await t
