@@ -1,0 +1,22 @@
+{
+  "name": "testcafe-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx testcafe chrome spec/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghoshasish99/TestCafe.git"
+  },
+  "author": "Ashish Ghosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghoshasish99/TestCafe/issues"
+  },
+  "homepage": "https://github.com/ghoshasish99/TestCafe#readme",
+  "devDependencies": {
+    "testcafe": "^1.10.1"
+  }
+}
