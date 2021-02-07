@@ -18,7 +18,7 @@ class SearchPage {
 
     async addProduct(item) {
         await t
-            .click(Selector().withText(item))
+            .click(Selector('a').withText(item))
             .click(this.btnAddToBasket)
             .click(this.iconBasket)
     }
