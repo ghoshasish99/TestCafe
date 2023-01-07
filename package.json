@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ghoshasish99/TestCafe#readme",
   "devDependencies": {
-    "testcafe": "^1.10.1",
+    "testcafe": "^15.1.317922",
     "testcafe-reporter-xunit": "^2.1.0"
   }
 }
